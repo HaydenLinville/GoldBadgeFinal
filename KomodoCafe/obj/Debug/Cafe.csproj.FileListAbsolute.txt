@@ -1,0 +1,8 @@
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\bin\Debug\KomodoCafe.exe.config
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\bin\Debug\KomodoCafe.exe
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\bin\Debug\KomodoCafe.pdb
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\obj\Debug\Cafe.csproj.AssemblyReference.cache
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\obj\Debug\Cafe.csproj.SuggestedBindingRedirects.cache
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\obj\Debug\Cafe.csproj.CoreCompileInputs.cache
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\obj\Debug\KomodoCafe.exe
+C:\1150CDrive\GoldBadgeFinal\KomodoCafe\obj\Debug\KomodoCafe.pdb
