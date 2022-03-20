@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace GoldBadgeFinal
 {
-    internal class Program
+    internal class GreenPlanProgram
     {
         static void Main(string[] args)
         {
+            GreenPlanProgramUI ui = new GreenPlanProgramUI();
+            ui.Run();
+
         }
     }
 }

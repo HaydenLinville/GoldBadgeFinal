@@ -43,7 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CarRepo.cs" />
+    <Compile Include="Cars\ElectricCars.cs" />
+    <Compile Include="Cars\GasCars.cs" />
+    <Compile Include="GreenPlanProgram.cs" />
+    <Compile Include="GreenPlanProgramUI.cs" />
+    <Compile Include="Cars\HybridCars.cs" />
+    <Compile Include="Cars\Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

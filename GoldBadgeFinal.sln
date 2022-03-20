@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldBadgeFinal", "GoldBadgeFinal\GoldBadgeFinal.csproj", "{35235619-B281-4AFC-967D-C5D3F05BD765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenPlan", "GoldBadgeFinal\GreenPlan.csproj", "{35235619-B281-4AFC-967D-C5D3F05BD765}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe", "KomodoCafe\Cafe.csproj", "{9990B87F-7FCC-45F8-960A-19F6AF8C7510}"
 EndProject
