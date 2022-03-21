@@ -9,7 +9,10 @@ namespace CompanyOutings
     public enum EventType { AmusementPark, Bowling, Concert, Golf}
     public class Outings
     {
+        public Outings ()
+        {
 
+        }
         public Outings(EventType type, int numberOfPeople, DateTime eventDate)
         {
             Type = type;

@@ -27,7 +27,28 @@ namespace CompanyOutings
             return _outings;
         }
 
+        public List<Outings> GetOutingByType(EventType type)
+        {
+           List<Outings> listByType = new List<Outings>();
+            foreach(Outings outing in _outings)
+            {
+                if(outing.Type == type)
+                {
+                    listByType.Add(outing);
+                    return listByType;
+                }
+            }
+            return null;
+        }
         
+        public decimal AddAllCostsForType(EventType type)
+        {
+            List<Outings> listByType = GetOutingByType(type);
+            decimal total = listByType.Select(i => i.TotalCostForEvent).Sum();
+            return total;
+            
+        }
+
 
         public decimal AddAllEventCosts()
         {
