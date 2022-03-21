@@ -26,12 +26,14 @@ namespace GoldBadgeFinal
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Console.Write("What would you like to do? \n" +
-                    "1. See All Cars. \n" +
-                    "2. Electric Car Menu. \n" +
-                    "3. Gas Car Menu. \n" +
-                    "4. Hybrid Car Menu. \n" +
-                    "5. Exit \n");
+                Console.WriteLine("What would you like to do? \n" +
+                    "1. See All Cars.");
+                Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("2. Go To ELECTRIC Car Menu.");
+                Console.ForegroundColor = ConsoleColor.DarkYellow; Console.WriteLine("3. Go To GAS Car Menu.");
+                Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("4. Go To HYBRID Car Menu.");
+                Console.ForegroundColor = ConsoleColor.White; Console.Write ("5.Exit \n");
+
+
 
                 string answer = Console.ReadLine();
 
@@ -203,7 +205,7 @@ namespace GoldBadgeFinal
             Console.Write("How much does the car cost? $");
             gas.Cost = decimal.Parse(Console.ReadLine());
 
-            if(_car.AddGasCar(gas))
+            if (_car.AddGasCar(gas))
             {
                 Console.WriteLine($"You added a {gas.Make} {gas.Model} car! As we all know those are fast!");
             }
@@ -260,7 +262,7 @@ namespace GoldBadgeFinal
             Console.Write("Is car fast?(Y/N) ");
             string fast = Console.ReadLine();
 
-            if(fast.ToLower().Contains("yes") || fast.ToLower().Contains("y"))
+            if (fast.ToLower().Contains("yes") || fast.ToLower().Contains("y"))
             {
                 h.IsItFast = true;
             }
@@ -289,25 +291,25 @@ namespace GoldBadgeFinal
             string gasModel = Console.ReadLine();
 
             GasCars oldGas = _car.GetGCarByModel(gasModel);
-            if(oldGas != null)
+            if (oldGas != null)
             {
                 Console.Write("What is the updated model of this car? ");
                 string newModel = Console.ReadLine();
-                if(newModel != "")
+                if (newModel != "")
                 {
                     oldGas.Model = newModel;
                 }
 
                 Console.Write("What is the updated make of this car? ");
                 string newMake = Console.ReadLine();
-                if(newMake != "")
+                if (newMake != "")
                 {
                     oldGas.Make = newMake;
                 }
 
                 Console.Write("What is the updated cost of this car? $");
                 string newCost = Console.ReadLine();
-                if(newCost != "")
+                if (newCost != "")
                 {
                     oldGas.Cost = decimal.Parse(newCost);
                 }
@@ -421,34 +423,34 @@ namespace GoldBadgeFinal
 
         public void ShowAllElectricCars()
         {
-            
+
             List<ElectricCars> eCarList = _car.GetAllElectricCars();
             foreach (ElectricCars car in eCarList)
             {
                 ShowECar(car);
             }
-         
+
         }
 
         public void ShowAllGasCars()
         {
-           
+
             List<GasCars> gasCarList = _car.GetAllGasCars();
             foreach (GasCars car in gasCarList)
             {
                 ShowGCar(car);
             }
-           
+
         }
         public void ShowAllHybridCars()
         {
-            
+
             List<HybridCars> hCarList = _car.GetAllHybridCars();
             foreach (HybridCars car in hCarList)
             {
                 ShowHCar(car);
             }
-           
+
 
         }
 
@@ -463,7 +465,7 @@ namespace GoldBadgeFinal
             AnyKey();
 
         }
-        
+
         public void ShowAllGasCarsMenu()
         {
             Console.Clear();
@@ -492,15 +494,15 @@ namespace GoldBadgeFinal
             ShowAllElectricCars();
             Console.Write("What model would you like to delete? ");
             string eModel = Console.ReadLine();
-            if(eModel != "")
+            if (eModel != "")
             {
-                if(_car.RemoveECarByModel(eModel))
-                { 
+                if (_car.RemoveECarByModel(eModel))
+                {
                     Console.WriteLine("Car successfully deleted. If this was a mistake too bad it's gone forever.");
                     AnyKey();
                 }
                 else
-                { 
+                {
                     Console.WriteLine("No car found by that model.");
                     AnyKey();
                 }

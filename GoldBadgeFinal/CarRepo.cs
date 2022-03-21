@@ -52,10 +52,7 @@ namespace GoldBadgeFinal
 
         //r
 
-        public List<Car> GetAllCars()
-        {
-            return _allCars;
-        }
+       
 
         public List<GasCars> GetAllGasCars()
         {
