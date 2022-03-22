@@ -1,8 +1,0 @@
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\bin\Debug\GoldBadgeFinal.exe.config
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\bin\Debug\GoldBadgeFinal.exe
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\bin\Debug\GoldBadgeFinal.pdb
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\obj\Debug\GreenPlan.csproj.AssemblyReference.cache
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\obj\Debug\GreenPlan.csproj.SuggestedBindingRedirects.cache
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\obj\Debug\GreenPlan.csproj.CoreCompileInputs.cache
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\obj\Debug\GoldBadgeFinal.exe
-C:\1150CDrive\GoldBadgeFinal\GoldBadgeFinal\obj\Debug\GoldBadgeFinal.pdb
