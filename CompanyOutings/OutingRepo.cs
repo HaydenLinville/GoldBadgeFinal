@@ -35,10 +35,10 @@ namespace CompanyOutings
                 if(outing.Type == type)
                 {
                     listByType.Add(outing);
-                    return listByType;
                 }
             }
-            return null;
+            return listByType;
+            
         }
         
         public decimal AddAllCostsForType(EventType type)
