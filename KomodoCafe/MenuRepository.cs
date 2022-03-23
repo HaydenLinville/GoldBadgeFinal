@@ -13,7 +13,6 @@ namespace KomodoCafe
         protected int _mealId = 1;
 
 
-        //C,
         public bool AddToMenu(MenuItems menuItem)
         {
             int startingCount = _menu.Count();
@@ -38,7 +37,6 @@ namespace KomodoCafe
             return null;
         }
 
-        //R
         public List<Menu> GetMenu()
         {
             return _menu;

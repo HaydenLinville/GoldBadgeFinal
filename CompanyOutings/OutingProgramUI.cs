@@ -76,23 +76,23 @@ namespace CompanyOutings
                 case "park":
                 case "a":
                 case "p":
-                    newOuting.Type = EventType.AmusementPark;
+                    newOuting.Type = EventType.AmusementPark; Console.WriteLine("Amusement Park... Keep in mind that is $70 per person.");
                     break;
                 case "2":
                 case "b":
                 case "bowling":
                 default:
-                    newOuting.Type = EventType.Bowling;
+                    newOuting.Type = EventType.Bowling; Console.WriteLine("Bowling is only $10 per person. Great choice.");
                     break;
                 case "3":
                 case "c":
                 case "concert":
-                    newOuting.Type = EventType.Concert;
+                    newOuting.Type = EventType.Concert; Console.WriteLine("A concert is $100 per person.");
                     break;
                 case "4":
                 case "g":
                 case "golf":
-                    newOuting.Type = EventType.Golf;
+                    newOuting.Type = EventType.Golf; Console.WriteLine("Golf is a fair $20 per person.");
                     break;
             }
             bool peopleMenu = true;
@@ -122,7 +122,7 @@ namespace CompanyOutings
 
             if(_outRepo.AddOuting(newOuting))
             {
-                Console.WriteLine("New outing was created!");
+                Console.WriteLine($"New {newOuting.Type.ToString()} outing was created!");
                 AnyKey();
             }
             else
@@ -199,6 +199,7 @@ namespace CompanyOutings
 
         public void ShowAllOutings()
         {
+            Console.Clear();
             List<Outings> listOuting = _outRepo.GetAllOutings();
             foreach (Outings outing in listOuting)
             {
@@ -211,7 +212,7 @@ namespace CompanyOutings
         {
             Console.WriteLine($"Type of Event: {outing.Type} \n" +
                 $"Number of people that attended: {outing.NumberOfPeople} \n" +
-                $"When the event took place: {outing.DateOfEvent} \n" +
+                $"When the event took place: {outing.DateOfEvent.ToString("MM-dd-yyyy")} \n" +
                 $"How much {outing.Type} cost per person: ${outing.CostPerPerson} \n" +
                 $"How much {outing.Type} cost total: ${outing.TotalCostForEvent} \n");
 

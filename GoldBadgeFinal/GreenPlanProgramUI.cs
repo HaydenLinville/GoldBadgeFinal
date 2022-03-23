@@ -203,11 +203,16 @@ namespace GoldBadgeFinal
             gas.Model = Console.ReadLine();
 
             Console.Write("How much does the car cost? $");
-            gas.Cost = decimal.Parse(Console.ReadLine());
+            string cost = Console.ReadLine();
+            if (cost != "")
+            {
+                gas.Cost = decimal.Parse(cost);
+            }
+           
 
             if (_car.AddGasCar(gas))
             {
-                Console.WriteLine($"You added a {gas.Make} {gas.Model} car! As we all know those are fast!");
+                Console.WriteLine($"You added a {gas.Make} {gas.Model}! As we all know those are fast!");
             }
             else
             {
@@ -230,7 +235,11 @@ namespace GoldBadgeFinal
             e.Model = Console.ReadLine();
 
             Console.Write("How much does the car cost? $");
-            e.Cost = decimal.Parse(Console.ReadLine());
+            string cost = Console.ReadLine();
+            if (cost != "")
+            {
+                e.Cost = decimal.Parse(cost);            
+            }
 
             if (_car.AddElectricCar(e))
             {
@@ -257,7 +266,12 @@ namespace GoldBadgeFinal
             h.Model = Console.ReadLine();
 
             Console.Write("How much does the car cost? $");
-            h.Cost = decimal.Parse(Console.ReadLine());
+            string cost = Console.ReadLine();
+            if (cost != "")
+            {
+                h.Cost = decimal.Parse(cost);
+            }
+            
 
             Console.Write("Is car fast?(Y/N) ");
             string fast = Console.ReadLine();
@@ -564,7 +578,7 @@ namespace GoldBadgeFinal
             HybridCars prius = new HybridCars();
 
             lighting.Make = "Ford";
-            lighting.Model = "F-150 Lightning";
+            lighting.Model = "Lightning";
             lighting.Cost = 3000m;
             modelX.Make = "Tesla";
             modelX.Model = "Model X";

@@ -9,8 +9,7 @@ namespace KomodoCafe
 
     
     public class MenuItems : Menu
-    {
-
+    { 
         public MenuItems() { }
 
         public MenuItems(string name, string description, List<Ingredients> ingredients, decimal price)

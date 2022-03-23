@@ -13,9 +13,7 @@ namespace KomodoCafe
         public void Run()
         {
             SeedContent();
-
             WindoMenu();
-
         }
 
         private void WindoMenu()
@@ -25,11 +23,11 @@ namespace KomodoCafe
             {
                 Console.Clear();
 
-            Console.Write("What would you like to do? \n" +
-                "1. See Menu \n" +
-                "2. Add item to Menu \n" +
-                "3. Remove item from Menu \n" +
-                "4. Exit \n");
+                Console.Write("What would you like to do? \n" +
+                    "1. See Menu \n" +
+                    "2. Add item to Menu \n" +
+                    "3. Remove item from Menu \n" +
+                    "4. Exit \n");
 
                 string answer = Console.ReadLine();
 
@@ -61,16 +59,16 @@ namespace KomodoCafe
         {
             Console.Clear();
             List<Menu> menus = _menuRepo.GetMenu();
-            foreach(MenuItems items in menus)
+            foreach (MenuItems items in menus)
             {
                 Console.WriteLine($"Meal Number: {items.MealNumber} \n" +
                     $"Price: ${items.Price} \n" +
                     $"Meal Name: {items.MealName} \n" +
                     $"Description: {items.Description}\n" +
-                    $"Ingredients: " );
-                foreach(var ingrdient in items.Ingredients)
+                    $"Ingredients: ");
+                foreach (var ingrdient in items.Ingredients)
                 {
-                    
+
                     if (ingrdient == Ingredients.Fries)
                     {
                         Console.WriteLine("Fries");
@@ -91,16 +89,15 @@ namespace KomodoCafe
                     {
                         Console.WriteLine("Bread");
                     }
-                    
+
                 }
                 Console.WriteLine();
-
 
             }
             AnyKey();
         }
 
-        
+
 
 
         private void AddItemsToMenue()
@@ -109,85 +106,92 @@ namespace KomodoCafe
 
             MenuItems items = new MenuItems();
 
-
+            Console.Write("What is the name of the meal? ");
+            string name = Console.ReadLine();
+            items.MealName = name;
 
             Console.Write("Describe the new meal. ");
             string describe = Console.ReadLine();
             items.Description = describe;
 
-
             Console.Write("How much does it cost? $");
             string cost = Console.ReadLine();
-            items.Price = decimal.Parse(cost);
+            if (cost != "")
+            {
+                items.Price = decimal.Parse(cost);
+            }
 
-            Console.Write("What is the name of the meal? ");
-                string name = Console.ReadLine();
-            items.MealName = name;
 
             bool runMini = true;
-                List<Ingredients> newItemIngredents = new List<Ingredients>();
+            List<Ingredients> newItemIngredents = new List<Ingredients>();
             while (runMini)
             {
 
-            Console.Write("What is in the meal? \n" +
-                "1. Bread \n" +
-                "2. Cheese \n" +
-                "3. Bacon \n" +
-                "4. Fries \n" +
-                "5. Chicken \n" +
-                "6. Veggies \n" +
-                "7. Done Adding \n");
+                Console.Write("What is in the meal? \n" +
+                    "1. Bread \n" +
+                    "2. Cheese \n" +
+                    "3. Bacon \n" +
+                    "4. Fries \n" +
+                    "5. Chicken \n" +
+                    "6. Veggies \n" +
+                    "7. Done Adding \n");
 
                 string ingredientAnswer = Console.ReadLine();
 
-                
+
                 switch (ingredientAnswer.ToLower())
                 {
                     case "1":
                     case "bread":
                     default:
-                        newItemIngredents.Add(Ingredients.Bread);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Bread); Console.WriteLine($"Bread added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "2":
                     case "cheese":
-                        newItemIngredents.Add(Ingredients.Cheese);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Cheese); Console.WriteLine($"Cheese added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "3":
                     case "bacon":
-                        newItemIngredents.Add(Ingredients.Bacon);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Bacon); Console.WriteLine($"Bacon added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "4":
                     case "fries":
-                        newItemIngredents.Add(Ingredients.Fries);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Fries); Console.WriteLine($"Fries added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "5":
                     case "chicken":
-                        newItemIngredents.Add(Ingredients.Chicken);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Chicken); Console.WriteLine($"Chicken added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "6":
                     case "veggies":
-                        newItemIngredents.Add(Ingredients.Veggies);
+                        Console.Clear(); newItemIngredents.Add(Ingredients.Veggies); Console.WriteLine($"Veggies added to {items.MealName}. Would you like to add anything else?");
                         break;
                     case "7":
                     case "done":
                     case "d":
                     case "exit":
                     case "e":
-                        runMini = false;
+                        if (newItemIngredents.Count > 0) { runMini = false; }
+                        else Console.WriteLine("You must add at least one item");
                         break;
 
                 }
-                items.Ingredients = newItemIngredents;          
+                items.Ingredients = newItemIngredents;
 
             }
-            _menuRepo.AddToMenu(items);
+
+            if (_menuRepo.AddToMenu(items))
+            {
+                Console.WriteLine($"{items.MealName} added to the Menu");
+            }
+            else { Console.WriteLine("Item not added try again"); }
             AnyKey();
         }
 
         public void RemoveItemsFromMenu()
         {
             Console.Clear();
-            DisplayMenu();
+            DisplayMenuDelete();
 
             Console.Write("What meal number would you like to remove? ");
             string answer = Console.ReadLine();
@@ -203,7 +207,7 @@ namespace KomodoCafe
             }
 
             AnyKey();
-            
+
 
 
         }
@@ -231,6 +235,52 @@ namespace KomodoCafe
             _menuRepo.AddToMenu(sandyWitch);
 
         }
+
+
+        private void DisplayMenuDelete()
+        {
+            Console.Clear();
+            List<Menu> menus = _menuRepo.GetMenu();
+            foreach (MenuItems items in menus)
+            {
+                Console.WriteLine($"Meal Number: {items.MealNumber} \n" +
+                    $"Price: ${items.Price} \n" +
+                    $"Meal Name: {items.MealName} \n" +
+                    $"Description: {items.Description}\n" +
+                    $"Ingredients: ");
+                foreach (var ingrdient in items.Ingredients)
+                {
+
+                    if (ingrdient == Ingredients.Fries)
+                    {
+                        Console.WriteLine("Fries");
+                    }
+                    else if (ingrdient == Ingredients.Veggies)
+                    {
+                        Console.WriteLine("Veggies");
+                    }
+                    else if (ingrdient == Ingredients.Bacon)
+                    {
+                        Console.WriteLine("Bacon");
+                    }
+                    else if (ingrdient == Ingredients.Cheese)
+                    {
+                        Console.WriteLine("Cheese");
+                    }
+                    else if (ingrdient == Ingredients.Bread)
+                    {
+                        Console.WriteLine("Bread");
+                    }
+
+                }
+                Console.WriteLine();
+
+            }
+
+        }
+
+
+
 
         private void AnyKey()
         {
