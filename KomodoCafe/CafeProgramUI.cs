@@ -98,8 +98,6 @@ namespace KomodoCafe
         }
 
 
-
-
         private void AddItemsToMenue()
         {
             Console.Clear();
@@ -208,8 +206,6 @@ namespace KomodoCafe
 
             AnyKey();
 
-
-
         }
 
 
@@ -235,7 +231,6 @@ namespace KomodoCafe
             _menuRepo.AddToMenu(sandyWitch);
 
         }
-
 
         private void DisplayMenuDelete()
         {
@@ -278,8 +273,6 @@ namespace KomodoCafe
             }
 
         }
-
-
 
 
         private void AnyKey()

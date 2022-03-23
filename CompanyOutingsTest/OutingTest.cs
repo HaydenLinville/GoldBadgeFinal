@@ -25,8 +25,6 @@ namespace CompanyOutingsTest
             outRepo.AddOuting(aPark);
             decimal totalTotal = golf.TotalCostForEvent + concert.TotalCostForEvent + bowling.TotalCostForEvent +aPark.TotalCostForEvent;
 
-           
-
             Console.WriteLine(outRepo.AddAllEventCosts());
             Console.WriteLine(totalTotal);
             Assert.AreEqual(totalTotal, outRepo.AddAllEventCosts());
@@ -42,10 +40,8 @@ namespace CompanyOutingsTest
             outRepo.AddOuting(golf);
             outRepo.AddOuting(bowling);
             outRepo.AddOuting(aPark);
-            
 
             Assert.IsTrue(outRepo.GetAllOutings().Contains(concert));
-
 
         }
 

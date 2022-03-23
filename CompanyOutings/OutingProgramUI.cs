@@ -21,9 +21,9 @@ namespace CompanyOutings
             {
                 Console.Clear();
                 Console.Write("What would you like to do? \n" +
-                    "1. See total spent on all events. \n" +
-                    "2. See all events. \n" +
-                    "3. See cost by events. \n" +
+                    "1. Total spent on all events. \n" +
+                    "2. All events. \n" +
+                    "3. Cost by events. \n" +
                     "4. Create new outing. \n" +
                     "5. Exit. \n");
                 string answer = Console.ReadLine();
@@ -122,15 +122,14 @@ namespace CompanyOutings
 
             if(_outRepo.AddOuting(newOuting))
             {
-                Console.WriteLine($"New {newOuting.Type.ToString()} outing was created!");
+                Console.WriteLine($"New {newOuting.Type.ToString()} outing was created!\n");
                 AnyKey();
             }
             else
             {
-                Console.WriteLine("Something went wrong sorry!");
+                Console.WriteLine("Something went wrong sorry!\n");
                 AnyKey();
             }
-
 
         }
 
@@ -157,22 +156,22 @@ namespace CompanyOutings
                     case "park":
                     case "a":
                     case "p":
-                        Console.Clear(); Console.WriteLine($"Total money spent on amusement parks events was ${_outRepo.AddAllCostsForType(EventType.AmusementPark)}"); AnyKey();
+                        Console.Clear(); Console.WriteLine($"Total money spent on amusement park events was ${_outRepo.AddAllCostsForType(EventType.AmusementPark)}\n"); AnyKey();
                         break;
                     case "2":
                     case "b":
                     case "bowling":
-                        Console.Clear(); Console.WriteLine($"Total money spent on bowling events was ${_outRepo.AddAllCostsForType(EventType.Bowling)}"); AnyKey();
+                        Console.Clear(); Console.WriteLine($"Total money spent on bowling events was ${_outRepo.AddAllCostsForType(EventType.Bowling)}\n"); AnyKey();
                         break;
                     case "3":
                     case "c":
                     case "concert":
-                        Console.Clear(); Console.WriteLine($"Total money spent on concerts was ${_outRepo.AddAllCostsForType(EventType.Concert)}"); AnyKey();
+                        Console.Clear(); Console.WriteLine($"Total money spent on concerts was ${_outRepo.AddAllCostsForType(EventType.Concert)}\n"); AnyKey();
                         break;
                     case "4":
                     case "g":
                     case "golf":
-                        Console.Clear(); Console.WriteLine($"Total money spent on golf events was ${_outRepo.AddAllCostsForType(EventType.Golf)}"); AnyKey();
+                        Console.Clear(); Console.WriteLine($"Total money spent on golf events was ${_outRepo.AddAllCostsForType(EventType.Golf)}\n"); AnyKey();
                         break;
                     case "5":
                     case "e":
@@ -192,7 +191,7 @@ namespace CompanyOutings
             Console.Clear();
             decimal total = _outRepo.AddAllEventCosts();
             Console.WriteLine($"The total cost of all events is ${total} \n" +
-                $"Wow that is a lot of money!");
+                $"Wow that is a lot of money!\n");
             AnyKey();
         }
 
@@ -214,7 +213,7 @@ namespace CompanyOutings
                 $"Number of people that attended: {outing.NumberOfPeople} \n" +
                 $"When the event took place: {outing.DateOfEvent.ToString("MM-dd-yyyy")} \n" +
                 $"How much {outing.Type} cost per person: ${outing.CostPerPerson} \n" +
-                $"How much {outing.Type} cost total: ${outing.TotalCostForEvent} \n");
+                $"Total cost for this {outing.Type} trip: ${outing.TotalCostForEvent} \n");
 
         }
 

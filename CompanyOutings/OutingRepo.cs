@@ -10,7 +10,6 @@ namespace CompanyOutings
     {
         private List<Outings> _outings = new List<Outings>();
 
-        //C
         public bool AddOuting(Outings outing)
         {
             int startingCount = _outings.Count();
@@ -20,8 +19,6 @@ namespace CompanyOutings
             return wasAdded;
         }
 
-        //R
-        
         public List<Outings> GetAllOutings()
         {
             return _outings;
@@ -52,18 +49,11 @@ namespace CompanyOutings
 
         public decimal AddAllEventCosts()
         {
-            //foreach(Outings outing in _outings)
-            //{
             decimal total = _outings.Select(i => i.TotalCostForEvent).Sum();
-
             return total;
-            //}
-            //return default;
+            
         }
 
-        //R
-        //Getall outings
-        //Calculate
 
     }
 }

@@ -33,8 +33,6 @@ namespace GoldBadgeFinal
                 Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("4. Go To HYBRID Car Menu.");
                 Console.ForegroundColor = ConsoleColor.White; Console.Write ("5.Exit \n");
 
-
-
                 string answer = Console.ReadLine();
 
                 switch (answer.ToLower())
@@ -272,7 +270,6 @@ namespace GoldBadgeFinal
                 h.Cost = decimal.Parse(cost);
             }
             
-
             Console.Write("Is car fast?(Y/N) ");
             string fast = Console.ReadLine();
 
@@ -465,7 +462,6 @@ namespace GoldBadgeFinal
                 ShowHCar(car);
             }
 
-
         }
 
         public void ShowAllHybridCarsMenu()
@@ -566,8 +562,6 @@ namespace GoldBadgeFinal
         }
 
 
-
-
         public void Seed()
         {
             ElectricCars lighting = new ElectricCars();
@@ -605,10 +599,7 @@ namespace GoldBadgeFinal
             _car.AddHybridCar(prius);
             _car.AddHybridCar(fusion);
 
-
         }
-
-
 
         private void ShowECar(ElectricCars car)
         {

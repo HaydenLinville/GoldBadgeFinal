@@ -17,8 +17,6 @@ namespace CafeTest
             MenuRepository ogMenu = new MenuRepository();
             MenuRepository menu = new MenuRepository();
             MenuItems menuItems = new MenuItems();
-
-            
             
             List<Ingredients> chickenSandWitch = new List<Ingredients>();
 
@@ -34,7 +32,6 @@ namespace CafeTest
 
             Assert.IsTrue(menu != ogMenu);
 
-
         }
 
         [TestMethod]
@@ -43,8 +40,6 @@ namespace CafeTest
 
             MenuRepository menu = new MenuRepository();
             MenuItems menuItems = new MenuItems();
-
-
 
             List<Ingredients> chickenSandWitch = new List<Ingredients>();
 
@@ -60,7 +55,6 @@ namespace CafeTest
             menu.GetItemByNumber(1);
 
             Assert.IsTrue(menu.GetItemByNumber(1) == menuItems);
-
 
         }
 
@@ -84,7 +78,6 @@ namespace CafeTest
             menu.GetMenu();
 
             Assert.IsTrue(menu.GetMenu().Contains(menuItems));
-
 
         }
 

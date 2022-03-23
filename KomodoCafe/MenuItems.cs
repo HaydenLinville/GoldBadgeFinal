@@ -21,7 +21,6 @@ namespace KomodoCafe
 
         }
 
-
         public string MealName { get; set; }
 
         public string Description { get; set; }
@@ -31,7 +30,6 @@ namespace KomodoCafe
         public decimal Price { get; set; }
 
         public int MealNumber { get; set; }
-
 
 
     }

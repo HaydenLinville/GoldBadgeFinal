@@ -13,9 +13,6 @@ namespace GoldBadgeFinal
         private List<HybridCars> _hybrids = new List<HybridCars>();
        private List<Car> _allCars = new List<Car>();
 
-
-        //c
-
         public bool AddGasCar(GasCars gasCar)
         {
             int startingCount = _gas.Count();
@@ -49,9 +46,6 @@ namespace GoldBadgeFinal
 
         }
 
-
-        //r
-
        
 
         public List<GasCars> GetAllGasCars()
@@ -68,17 +62,6 @@ namespace GoldBadgeFinal
             return _hybrids;
         }
 
-       /* public Car GetCarByModel(string model)
-        {
-            foreach(Car car in _allCars)
-            {
-                if (car.Model == model)
-                {
-                    return car;
-                }
-            }
-            return null;
-        }*/
 
         public ElectricCars GetECarByModel(string model)
         {
@@ -115,9 +98,6 @@ namespace GoldBadgeFinal
         }
 
 
-
-
-        //u maybe do a serial number? 
         public bool UpdateExistingHCar(HybridCars newCar, string model)
         {
             HybridCars oldCar = GetHCarByModel(model);
@@ -169,8 +149,6 @@ namespace GoldBadgeFinal
         }
 
 
-
-        //d
         public bool RemoveHCarByModel(string model)
         {
             HybridCars car = GetHCarByModel(model);

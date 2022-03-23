@@ -42,8 +42,6 @@ namespace KomodoCafe
             return _menu;
         }
 
-       
-
         public bool RemoveItemByNumber(int id)
         {
             MenuItems removeItem = GetItemByNumber(id);

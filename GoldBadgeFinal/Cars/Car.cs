@@ -19,7 +19,5 @@ namespace GoldBadgeFinal
 
         public bool IsItFast { get; set; }
 
-        //is it fast
-
     }
 }
